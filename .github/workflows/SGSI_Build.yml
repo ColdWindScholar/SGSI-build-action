@@ -46,12 +46,6 @@ jobs:
         run: |
           git clone --recurse-submodules https://github.com/ColdWindScholar/SGSI-build-tool.git -b 12 $GITHUB_WORKSPACE/SGSI-build-tool
 
-      - name: Setup sGSI tools requirements
-        run: |
-          sudo sed -i 's/USE_MIRROR_FOR_PIP\=true/USE_MIRROR_FOR_PIP\=false/' $GITHUB_WORKSPACE/SGSI-build-tool/setup.sh
-        # sudo apt-get -y --purge remove "adoptopenjdk-11-hotspot"
-        # java -version
-
       - name: Build SGSI
         run: |
           cd  $GITHUB_WORKSPACE/SGSI-build-tool
